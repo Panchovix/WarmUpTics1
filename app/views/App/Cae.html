@@ -1,0 +1,9 @@
+{{set . "title" "Cae page"}}
+{{template "header.html" .}}
+<header class="jumbotron" style="background-color:#FFFF00">
+  <h1>Su Interés mensual es: {{.interes}}</h1>
+  <h1>Su CAE es: {{.costoa}}</h1>
+  <h1>Su Monto total a pagar es: {{.montot}}</h1>
+</header>
+<a href="/">Back to form</a>
+{{template "footer.html" .}}

@@ -1,0 +1,29 @@
+<form action="/App/Cae" method="GET">
+	<center>
+    <input type="number" name="M" min="1" /><br/>
+	<p>Ingrese Monto Inicial</p>
+		<input type="number" name="C" min="1" /><br/>
+    <p>Ingrese Cuota Mensual</p>
+		<input type="number" name="N" min="2" max="48"/><br/>
+    <p>Ingrese Numero de Meses</p>
+    <input type="submit" value="Calcular" />
+	</center>
+</form>
+{{if .flash.success}}
+<div class="alert alert-success">
+	{{.flash.success}}
+</div>
+{{end}}
+
+{{if or .errors .flash.error}}
+<div class="alert alert-danger">
+	{{if .flash.error}}
+		{{.flash.error}}
+	{{end}}
+	<ul style="margin-top:10px;">
+		{{range .errors}}
+			<li>{{.}}</li>
+		{{end}}
+	</ul>
+</div>
+{{end}}
